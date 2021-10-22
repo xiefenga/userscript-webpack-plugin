@@ -1,3 +1,3 @@
 export * from './type'
 
-export { default as WebpackUserScriptPlugin, PluginOptions } from './plugin'
+export { default as UserScriptWebpackPlugin, PluginOptions } from './plugin'
