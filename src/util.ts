@@ -15,5 +15,5 @@ export const generateUserScript = (metadata: Partial<UserScriptMetaData>, paddin
     throw new TypeError('metadata arg must be an object')
   }
   const body = generateMetaDataBody(metadata, padding)
-  return `// ==UserScript==\n${body.join('\n')}\n// ==UserScript==\n\n`
+  return `// ==UserScript==\n${body.join('\n')}\n// ==/UserScript==\n\n`
 }
