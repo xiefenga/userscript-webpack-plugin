@@ -1,6 +1,6 @@
 {
   "name": "userscript-webpack-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a webpack plugin to generate userscript metadata",
   "main": "dist/index.js",
   "license": "MIT",
