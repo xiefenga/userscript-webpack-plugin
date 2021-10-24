@@ -1,12 +1,26 @@
 {
   "name": "userscript-webpack-plugin",
   "version": "0.0.3",
+  "description": "a webpack plugin to generate userscript metadata",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "userscript"
+  ],
   "author": {
     "name": "xie feng",
     "email": "x1294699027@gmail.com"
   },
-  "main": "dist/index.js",
-  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "homepage": "https://github.com/xiefenga/userscript-webpack-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiefenga/userscript-webpack-plugin"
+  },
   "scripts": {
     "dev": "nodemon -e ts --exec tsc"
   },
