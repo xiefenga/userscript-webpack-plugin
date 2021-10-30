@@ -2,7 +2,7 @@ export interface UserScriptMetaData {
   name: string
   namespace: string
   version: string
-  auth: string
+  author: string
   description: string
   match: string
   require: string[]
@@ -49,8 +49,6 @@ export type RunMoment =
   | 'document-end'
   | 'document-idle'
   | 'context-menu'
-
-
 
 // @name
 // @namespace
