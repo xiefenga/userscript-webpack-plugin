@@ -10,6 +10,7 @@ export interface UserScriptMetaData {
   connect: string
   updateURL: string
   'run-at': RunMoment
+  [key: string]: string | string[]
 }
 
 // Application Programming Interface
