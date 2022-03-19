@@ -12,7 +12,6 @@ export interface PluginOptions {
 }
 
 export default class UserScriptPlugin {
-
   public static PLUGIN_NAME: string = 'UserScriptPlugin'
 
   private metadata: Partial<UserScriptMetaData>
@@ -32,9 +31,9 @@ export default class UserScriptPlugin {
 
   public apply(compiler: Compiler): void {
     const { PLUGIN_NAME } = UserScriptPlugin
-    compiler.hooks.compilation.tap(PLUGIN_NAME, compilation => {
+    compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation) => {
       // 使用 processAssets hook 会影响 sourceMap 文件的生成
-      compilation.hooks.afterProcessAssets.tap(PLUGIN_NAME, assets => {
+      compilation.hooks.afterProcessAssets.tap(PLUGIN_NAME, (assets) => {
         Object.entries(assets).forEach(([filename, source]) => {
           if (ModuleFilenameHelpers.matchObject(this.rules, filename)) {
             let content = source.source()
@@ -42,7 +41,9 @@ export default class UserScriptPlugin {
               content = content.toString('utf-8')
             }
             // @ts-ignore
-            assets[filename] = new RawSource(`${generateUserScript(this.metadata, this.padding)}\n${content}`)
+            assets[filename] = new RawSource(
+              `${generateUserScript(this.metadata, this.padding)}\n${content}`
+            )
           }
         })
       })
